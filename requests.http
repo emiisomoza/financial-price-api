@@ -1,0 +1,11 @@
+### Health check
+GET http://localhost:4567/health
+
+### FX - USD to AUD
+GET http://localhost:4567/v1/price?assetType=fx&asset=USD&currency=AUD
+
+### Crypto - BTC to AUD
+GET http://localhost:4567/v1/price?assetType=crypto&asset=BTC&currency=AUD
+
+### Stock - AAPL to AUD
+GET http://localhost:4567/v1/price?assetType=stock&asset=AAPL&currency=AUD
