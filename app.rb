@@ -3,6 +3,7 @@ require "sinatra/json"
 require "dotenv/load"
 require_relative "services/price_resolver"
 require_relative "middleware/request_logger"
+require_relative "services/cache_service"
 
 use Middleware::RequestLogger
 
@@ -23,11 +24,15 @@ get "/v1/price" do
     halt 400, json(error: "Missing required parameters: #{missing.join(', ')}")
   end
 
-  result = Services::PriceResolver.resolve(
-    asset_type: asset_type,
-    asset: asset,
-    currency: currency
-  )
+  cache_key = "price:#{asset_type}:#{asset}:#{currency}".downcase
+
+  result = Services::CacheService.fetch(cache_key, asset_type: asset_type) do
+    Services::PriceResolver.resolve(
+      asset_type: asset_type,
+      asset: asset,
+      currency: currency
+    )
+  end
 
   json result
 

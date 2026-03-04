@@ -6,6 +6,8 @@ gem "faraday"
 gem "faraday-net_http"
 gem "dotenv"
 gem "json"
+gem "redis"
+gem "connection_pool"
 
 group :development, :test do
   gem "puma"
