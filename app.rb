@@ -2,6 +2,9 @@ require "sinatra"
 require "sinatra/json"
 require "dotenv/load"
 require_relative "services/price_resolver"
+require_relative "middleware/request_logger"
+
+use Middleware::RequestLogger
 
 set :port, ENV.fetch("PORT", 4567)
 
