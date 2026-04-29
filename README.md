@@ -119,8 +119,10 @@ PORT=4567
 
 ### Start the server
 ```bash
-ruby app.rb
+bundle exec puma -p 4567 config.ru
 ```
+
+> `ruby app.rb` causes a Puma path resolution error when the project is not at its original cloned location. Use `bundle exec puma` instead.
 
 API available at `http://localhost:4567`
 
