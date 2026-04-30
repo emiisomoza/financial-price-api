@@ -9,6 +9,7 @@ use Middleware::RequestLogger
 
 set :port, ENV.fetch("PORT", 4567)
 set :protection, false
+disable :host_authorization
 
 get "/v1/price" do
   asset_type = params[:assetType]
