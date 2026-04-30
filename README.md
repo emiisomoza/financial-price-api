@@ -8,7 +8,7 @@
 REST API built in **Ruby (Sinatra)** that resolves real-time asset prices across multiple asset types (FX, crypto, stocks) using the **Strategy design pattern**.
 
 This service is part of a larger financial portfolio system:
-- 🇯🇦 **[Finance API](https://github.com/emiisomoza/finantial-profile-api)** — Java/Spring Boot: manages users, income, expenses and assets
+- 🇯🇦 **[Finance API](https://github.com/emiisomoza/financial-profile-api)** — Java/Spring Boot: manages users, income, expenses and assets
 - 💱 **Price API** (this repo) — Ruby/Sinatra: resolves real-time asset prices
 - 🐍 **[Notifier](https://github.com/emiisomoza/notifier)** — Python: consumes a queue and sends monthly summary emails
 
@@ -119,8 +119,10 @@ PORT=4567
 
 ### Start the server
 ```bash
-ruby app.rb
+bundle exec puma -p 4567 config.ru
 ```
+
+> `ruby app.rb` causes a Puma path resolution error when the project is not at its original cloned location. Use `bundle exec puma` instead.
 
 API available at `http://localhost:4567`
 
