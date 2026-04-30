@@ -8,7 +8,7 @@ module Fixtures
   end
 
   def stock_response
-    { "c" => 180.0 }.to_json
+    { "Global Quote" => { "05. price" => "180.0" } }.to_json
   end
 
   def fx_usd_aud_response

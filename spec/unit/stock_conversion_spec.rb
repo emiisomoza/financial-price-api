@@ -7,9 +7,9 @@ RSpec.describe PriceConversion::StockConversion do
   subject(:converter) { described_class.new }
 
   before do
-    allow(ENV).to receive(:fetch).with("FINNHUB_API_KEY").and_return("fake_key")
+    allow(ENV).to receive(:fetch).with("ALPHAVANTAGE_API_KEY").and_return("fake_key")
 
-    stub_request(:get, /finnhub.io/)
+    stub_request(:get, /alphavantage.co/)
       .to_return(status: 200, body: stock_response, headers: { "Content-Type" => "application/json" })
 
     stub_request(:get, /open.er-api.com/)
