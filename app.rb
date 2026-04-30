@@ -8,8 +8,7 @@ require_relative "services/cache_service"
 use Middleware::RequestLogger
 
 set :port, ENV.fetch("PORT", 4567)
-set :protection, false
-disable :host_authorization
+set :host_authorization, permitted_hosts: [/.*/]
 
 get "/v1/price" do
   asset_type = params[:assetType]
