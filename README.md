@@ -8,7 +8,7 @@
 REST API built in **Ruby (Sinatra)** that resolves real-time asset prices across multiple asset types (FX, crypto, stocks) using the **Strategy design pattern**.
 
 This service is part of a larger financial portfolio system:
-- 🇯🇦 **[Finance API](https://github.com/emiisomoza/finantial-profile-api)** — Java/Spring Boot: manages users, income, expenses and assets
+- 🇯🇦 **[Finance API](https://github.com/emiisomoza/financial-profile-api)** — Java/Spring Boot: manages users, income, expenses and assets
 - 💱 **Price API** (this repo) — Ruby/Sinatra: resolves real-time asset prices
 - 🐍 **[Notifier](https://github.com/emiisomoza/notifier)** — Python: consumes a queue and sends monthly summary emails
 
