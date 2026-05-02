@@ -23,7 +23,7 @@ jobs:
       - name: Run tests
         env:
           RACK_ENV: test
-          FINNHUB_API_KEY: fake_key_for_tests
+          ALPHAVANTAGE_API_KEY: fake_key_for_tests
         run: bundle exec rspec --format documentation
 
       - name: Upload test results
